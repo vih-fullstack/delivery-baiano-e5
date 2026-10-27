@@ -1,0 +1,21 @@
+{
+  "name": "delivery-baiano-e5",
+  "version": "1.0.0",
+  "description": "Projeto de desenvolvimento de uma plataforma de pedidos e entregas online. O objetivo é simular o ecossistema completo de um app de delivery, integrando catálogo de produtos, carrinho de compras, acompanhamento de pedidos em tempo real e painel administrativo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vih-fullstack/delivery-baiano-e5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vih-fullstack/delivery-baiano-e5/issues"
+  },
+  "homepage": "https://github.com/vih-fullstack/delivery-baiano-e5#readme"
+}
