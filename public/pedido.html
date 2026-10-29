@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Ju - Fazer Pedido</title>
+</head>
+<body>
+    <herader>
+        <h1> Fazer pedido</h1>
+        <nav>
+            <Ul>
+                <liv><a href="index.html"> Voltar pro cardápio</a></liv>
+            </Ul>
+        </nav>
+    </herader>
+    <main>
+        <form action="/pedidos" method="post">
+            <fieldset>
+                <legend>Seu dados</legend>
+                <p>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+                </p>
+                <p>
+                    <label for="telefone">Telefone</label>
+                    <input type=""tel" id="telefone" name=""telefone" required>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Entrega</legend>
+                <p>
+                    <label for="bairro">Bairro</label>
+                    <select id="bairro" name="bairro" required>
+                    <option value="rio-vermelho">Rio Vermelho (taxa R$ 5,00)</option>
+                    <option value="barra"> Barra (taxa R$ 6,00)</option>
+                    <option value="pituba">Pituba (taxa R$ 7,00)</option>
+                    <option value="itapua"> Itapuã (taxa R$ 9,00)</option>
+                </select>
+                </p>
+                <p>
+                    <label for="endereco">Endereço (rua,número e complemento)<label>
+                    <textarea name="endereco" id="endereco" rows="2" required></textarea>
+                </p>
+            </fieldset>
+            <button type="submit">Enviar pedido</button>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+</html>
