@@ -8,3 +8,10 @@ Projeto de desenvolvimento de uma plataforma de pedidos e entregas online. O obj
 Precisa do Node.js 26. Ainda não há código: o projeto começa na Sprint 1.
 ## Situação
 Sprint 1 - Cardápio no ar. Scrum Master: (Victória Gabriela Nunes Dos Santos)
+
+## Regras da Dona Ju
+
+- O delivery recebe pedidos das 11h às 22h.
+- Os pagamentos são realizados em dinheiro ou Pix na entrega.
+- O cliente pode consultar o cardápio e acompanhar o status do pedido.
+- A taxa de entrega e o valor total devem ser informados antes da confirmação do pedido.
