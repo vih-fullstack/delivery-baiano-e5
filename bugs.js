@@ -50,7 +50,7 @@ const total = subtotal - desconto + taxaEntrega;
 
 // 5. Pedido mínimo
 let aceito = false;
-if (subtotal > PEDIDO_MINIMO) {
+if (subtotal >= PEDIDO_MINIMO) {
   aceito = true;
 }
 
