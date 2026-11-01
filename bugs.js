@@ -42,7 +42,7 @@ if (bairro === "Rio Vermelho") {
 // 3. Desconto do cupom
 let desconto = 0;
 if (cupom === "PRIMEIRA10") {
-  desconto = (subtotal + taxaEntrega) * 10 / 100;
+  desconto = subtotal * 10 / 100;
 }
 
 // 4. Total do pedido
