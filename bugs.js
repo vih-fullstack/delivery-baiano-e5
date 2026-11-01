@@ -32,7 +32,7 @@ let taxaEntrega = 0;
 if (bairro === "Rio Vermelho") {
   taxaEntrega = 500;
 } else if (bairro === "Barra") {
-  taxaEntrega = 6;
+  taxaEntrega = 600;
 } else if (bairro === "Pituba") {
   taxaEntrega = 700;
 } else if (bairro === "Itapuã") {
