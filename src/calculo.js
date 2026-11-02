@@ -24,3 +24,10 @@
    PRECO_COCADA * qtdCocada;
 
  console.log(`Itens: ${reais.format(subtotal / 100)}`);
+
+  // Taxa de entrega e total (Victória)
+ const TAXA_ENTREGA = 600;
+ const total = subtotal + TAXA_ENTREGA;
+
+ console.log(`Taxa: ${reais.format(TAXA_ENTREGA / 100)}`);
+ console.log(`Total: ${reais.format(total / 100)}`);
