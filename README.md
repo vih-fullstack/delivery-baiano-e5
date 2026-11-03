@@ -8,6 +8,7 @@ Projeto de desenvolvimento de uma plataforma de pedidos e entregas online. O obj
 |---|---|
 | Victória Gabriela Nunes Dos Santos | vih-fullstack |
 | Andressa Santos Nascimento | dressasantosn0708-star |
+| Márcio Vinicius Esteves Reis | Kamikazedojapan |
 
 ## Como rodar
 
