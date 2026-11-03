@@ -1,117 +1,179 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delivery Ju - Fazer Pedido</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Fazer pedido</h1>
+      <h1>Fazer pedido</h1>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Voltar para o cardápio</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Voltar para o cardápio</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <form action="/pedidos" method="post">
-            <fieldset>
-                <legend>Seus dados</legend>
+      <form action="/pedidos" method="post">
+        <fieldset>
+          <legend>Seus dados</legend>
 
-                <p>
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" required>
-                </p>
+          <p>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required />
+          </p>
 
-                <p>
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" required>
-                </p>
-            </fieldset>
+          <p>
+            <label for="telefone">Telefone</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              pattern="[0-9]{10,11}"
+              minlength="10"
+              maxlength="11"
+              inputmode="numeric"
+              placeholder="71999999999"
+              title="Informe um telefone com 10 ou 11 números."
+              required
+            />
+          </p>
+        </fieldset>
 
-            <fieldset>
-                <legend>Entrega</legend>
+        <fieldset>
+          <legend>Entrega</legend>
 
-                <p>
-                    <label for="bairro">Bairro</label>
-                    <select id="bairro" name="bairro" required>
-                        <option value="">Escolha seu bairro</option>
-                        <option value="rio-vermelho">Rio Vermelho (taxa R$ 5,00)</option>
-                        <option value="barra">Barra (taxa R$ 6,00)</option>
-                        <option value="pituba">Pituba (taxa R$ 7,00)</option>
-                        <option value="itapua">Itapuã (taxa R$ 9,00)</option>
-                    </select>
-                </p>
+          <p>
+            <label for="bairro">Bairro</label>
+            <select id="bairro" name="bairro" required>
+              <option value="">Escolha seu bairro</option>
+              <option value="rio-vermelho">Rio Vermelho (taxa R$ 5,00)</option>
+              <option value="barra">Barra (taxa R$ 6,00)</option>
+              <option value="pituba">Pituba (taxa R$ 7,00)</option>
+              <option value="itapua">Itapuã (taxa R$ 9,00)</option>
+            </select>
+          </p>
 
-                <p>
-                    <label for="endereco">Endereço (rua, número e complemento)</label>
-                    <textarea id="endereco" name="endereco" rows="2" required></textarea>
-                </p>
-            </fieldset>
+          <p>
+            <label for="endereco">Endereço (rua, número e complemento)</label>
+            <textarea
+              id="endereco"
+              name="endereco"
+              rows="2"
+              required
+            ></textarea>
+          </p>
+        </fieldset>
 
-            <fieldset>
-                <legend>Itens</legend>
+        <fieldset>
+          <legend>Itens</legend>
 
-                <p>
-                    <label for="qtd-acaraje">Acarajé (R$ 12,90)</label>
-                    <input type="number" id="qtd-acaraje" name="itens[acaraje]" min="0" max="20" value="0">
-                </p>
+          <p>
+            <label for="qtd-acaraje">Acarajé (R$ 12,90)</label>
+            <input
+              type="number"
+              id="qtd-acaraje"
+              name="itens[acaraje]"
+              min="0"
+              max="20"
+              value="0"
+            />
+          </p>
 
-                <p>
-                    <label for="qtd-bobo">Bobó de camarão (R$ 38,90)</label>
-                    <input type="number" id="qtd-bobo" name="itens[bobo]" min="0" max="20" value="0">
-                </p>
+          <p>
+            <label for="qtd-bobo">Bobó de camarão (R$ 38,90)</label>
+            <input
+              type="number"
+              id="qtd-bobo"
+              name="itens[bobo]"
+              min="0"
+              max="20"
+              value="0"
+            />
+          </p>
 
-                <p>
-                    <label for="qtd-banana">Moqueca de banana (R$ 28,00)</label>
-                    <input type="number" id="qtd-banana" name="itens[banana]" min="0" max="20" value="0">
-                </p>
+          <p>
+            <label for="qtd-banana">Moqueca de banana (R$ 28,00)</label>
+            <input
+              type="number"
+              id="qtd-banana"
+              name="itens[banana]"
+              min="0"
+              max="20"
+              value="0"
+            />
+          </p>
 
-                <p>
-                    <label for="qtd-caruru">Caruru Baiano (R$ 28,00)</label>
-                    <input type="number" id="qtd-caruru" name="itens[caruru]" min="0" max="20" value="0">
-                </p>
+          <p>
+            <label for="qtd-caruru">Caruru Baiano (R$ 28,00)</label>
+            <input
+              type="number"
+              id="qtd-caruru"
+              name="itens[caruru]"
+              min="0"
+              max="20"
+              value="0"
+            />
+          </p>
 
-                <p>
-                    <label for="qtd-moqueca">Moqueca Baiana de Peixe (R$ 28,00)</label>
-                    <input type="number" id="qtd-moqueca" name="itens[moqueca]" min="0" max="20" value="0">
-                </p>
+          <p>
+            <label for="qtd-moqueca">Moqueca Baiana de Peixe (R$ 28,00)</label>
+            <input
+              type="number"
+              id="qtd-moqueca"
+              name="itens[moqueca]"
+              min="0"
+              max="20"
+              value="0"
+            />
+          </p>
 
-                <p>
-                    <label for="qtd-xinxim">Xinxim de Galinha (R$ 35,00)</label>
-                    <input type="number" id="qtd-xinxim" name="itens[xinxim]" min="0" max="20" value="0">
-                </p>
-            </fieldset>
+          <p>
+            <label for="qtd-xinxim">Xinxim de Galinha (R$ 35,00)</label>
+            <input
+              type="number"
+              id="qtd-xinxim"
+              name="itens[xinxim]"
+              min="0"
+              max="20"
+              value="0"
+            />
+          </p>
+        </fieldset>
 
-            <fieldset>
-                <legend>Pagamento</legend>
+        <fieldset>
+          <legend>Pagamento</legend>
 
-                <p>
-                    <label for="pagamento">Forma de pagamento (na entrega)</label>
-                    <select id="pagamento" name="forma_pagamento" required>
-                        <option value="">Escolha</option>
-                        <option value="dinheiro">Dinheiro</option>
-                        <option value="pix">Pix</option>
-                    </select>
-                </p>
+          <p>
+            <label for="pagamento">Forma de pagamento (na entrega)</label>
+            <select id="pagamento" name="forma_pagamento" required>
+              <option value="">Escolha</option>
+              <option value="dinheiro">Dinheiro</option>
+              <option value="pix">Pix</option>
+            </select>
+          </p>
 
-                <p>
-                    <label for="cupom">Cupom (opcional)</label>
-                    <input type="text" id="cupom" name="cupom"
-                           maxlength="20" placeholder="PRIMEIRA10">
-                </p>
-            </fieldset>
+          <p>
+            <label for="cupom">Cupom (opcional)</label>
+            <input
+              type="text"
+              id="cupom"
+              name="cupom"
+              maxlength="20"
+              placeholder="PRIMEIRA10"
+            />
+          </p>
+        </fieldset>
 
-            <button type="submit">Enviar pedido</button>
-        </form>
+        <button type="submit">Enviar pedido</button>
+      </form>
     </main>
 
     <footer>
-        <p>Delivery dona Ju - Comida baiana feita no dia.</p>
+      <p>Delivery dona Ju - Comida baiana feita no dia.</p>
     </footer>
-</body>
+  </body>
 </html>
