@@ -4,7 +4,7 @@ Equipe: E5
 Data: 27/10/2026  
 Quem digitou: Victória Gabriela Nunes Dos Santos  
 Quem registrou: Victória Gabriela Nunes Dos Santos  
-Quem revisou o pull request: Andressa Santos Nascimento (revisão pendente)
+Quem revisou o pull request: Andressa Santos Nascimento
 
 ## O pedido do bugs.js
 
