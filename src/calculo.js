@@ -8,20 +8,20 @@
  });
 
  // Preços do cardápio, em centavos
- const PRECO_ACARAJE = 1200;
- const PRECO_ABARA = 1000;
- const PRECO_COCADA = 600;
+ const PRECO_ACARAJE = 1290;
+ const BOBO_DE_CAMARAO = 3890;
+ const MOQUECA_DE_BANANA = 2800;
 
  // O pedido: quantas unidades de cada prato
  const qtdAcaraje = 2;
- const qtdAbara = 1;
- const qtdCocada = 1;
+ const qtdBoboCamarao = 1;
+ const qtdMoquecaBanana = 1;
 
  // Subtotal dos itens
  const subtotal =
    PRECO_ACARAJE * qtdAcaraje +
-   PRECO_ABARA * qtdAbara +
-   PRECO_COCADA * qtdCocada;
+   BOBO_DE_CAMARAO * qtdBoboCamarao +
+   MOQUECA_DE_BANANA * qtdMoquecaBanana;
 
  console.log(`Itens: ${reais.format(subtotal / 100)}`);
 
