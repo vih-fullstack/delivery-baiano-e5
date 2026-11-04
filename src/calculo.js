@@ -4,17 +4,24 @@
 //(VICTORIA)
 const reais = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
-const PRATOS = ["Acarajé", "Abará", "Moqueca de peixe", "Bobó de camarão", "Vatapá", "Cocada"];
-const PRECOS = [1200, 1000, 4200, 3800, 1500, 600]; // centavos
+const PRATOS = [
+  "Acarajé",
+  "Bobó de camarão",
+  "Moqueca de banana",
+  "Caruru Baiano",
+  "Moqueca Baiana de peixe",
+  "Xinxim de galinha"
+];
+const PRECOS = [1290, 3890, 2800, 2800, 2800, 3500]; // centavos
 
 const PEDIDO_MINIMO = 3000;
 
 const QUANTIDADES = [
-  [2, 1, 0, 0, 0, 1], // 1. pedido comum
-  [0, 0, 0, 0, 2, 0], // 2. primeira compra com cupom, no limite do mínimo
-  [1, 0, 0, 0, 0, 1], // 3. abaixo do mínimo
-  [0, 0, 1, 0, 0, 0], // 4. 22:00 em ponto
-  [0, 0, 0, 1, 0, 0], // 5. bairro fora da área
+  [2, 1, 0, 0, 0, 0], // 1. pedido comum
+  [0, 0, 0, 0, 0, 1], // 2. primeira compra com cupom, no limite do mínimo
+  [1, 0, 0, 0, 0, 0], // 3. abaixo do mínimo
+  [0, 1, 0, 0, 0, 0], // 4. 22:00 em ponto
+  [0, 1, 0, 0, 0, 0], // 5. bairro fora da área
 ];
 const BAIRROS = ["Barra", "Rio Vermelho", "Pituba", "Itapuã", "Liberdade"];
 const HORAS = [12, 19, 12, 22, 13];
