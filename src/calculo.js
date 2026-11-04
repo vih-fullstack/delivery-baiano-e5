@@ -2,50 +2,75 @@
  // src/calculo.js - o total de um pedido do delivery
  // Dinheiro sempre em centavos inteiros. R$ só na hora de mostrar.
 //(VICTORIA)
- const reais = new Intl.NumberFormat("pt-BR", {
-   style: "currency",
-   currency: "BRL"
- });
+const reais = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
- // Preços do cardápio, em centavos
- const PRECO_ACARAJE = 1290;
- const BOBO_DE_CAMARAO = 3890;
- const MOQUECA_DE_BANANA = 2800;
+const PRATOS = ["Acarajé", "Abará", "Moqueca de peixe", "Bobó de camarão", "Vatapá", "Cocada"];
+const PRECOS = [1200, 1000, 4200, 3800, 1500, 600]; // centavos
 
- // O pedido: quantas unidades de cada prato
- const qtdAcaraje = 2;
- const qtdBoboCamarao = 1;
- const qtdMoquecaBanana = 1;
+const PEDIDO_MINIMO = 3000;
 
- // Subtotal dos itens
- const subtotal =
-   PRECO_ACARAJE * qtdAcaraje +
-   BOBO_DE_CAMARAO * qtdBoboCamarao +
-   MOQUECA_DE_BANANA * qtdMoquecaBanana;
+const QUANTIDADES = [
+  [2, 1, 0, 0, 0, 1], // 1. pedido comum
+  [0, 0, 0, 0, 2, 0], // 2. primeira compra com cupom, no limite do mínimo
+  [1, 0, 0, 0, 0, 1], // 3. abaixo do mínimo
+  [0, 0, 1, 0, 0, 0], // 4. 22:00 em ponto
+  [0, 0, 0, 1, 0, 0], // 5. bairro fora da área
+];
+const BAIRROS = ["Barra", "Rio Vermelho", "Pituba", "Itapuã", "Liberdade"];
+const HORAS = [12, 19, 12, 22, 13];
+const PRIMEIRA_COMPRA = [false, true, false, false, false]; // ainda sem cadastro
+const CUPONS = ["", "PRIMEIRA10", "", "", ""];
 
- console.log(`Itens: ${reais.format(subtotal / 100)}`);
+for (let c = 0; c < QUANTIDADES.length; c++) {
+  const qtds = QUANTIDADES[c];
+  const bairro = BAIRROS[c];
+  const hora = HORAS[c];
+  console.log(`\nCenário ${c + 1}: ${bairro}, ${hora}h`);
 
-  // Taxa de entrega e total (Victória)
- const TAXA_ENTREGA = 600;
- const total = subtotal + TAXA_ENTREGA;
+  let subtotal = 0;
+  let totalItens = 0;
+  for (let i = 0; i < PRECOS.length; i++) {
+    if (qtds[i] === 0) {
+      continue;
+    }
+    subtotal += PRECOS[i] * qtds[i];
+    totalItens += qtds[i];
+    console.log(`  ${qtds[i]} x ${PRATOS[i]}`);
+  }
+  const palavra = totalItens === 1 ? "item" : "itens";
+  console.log(`${totalItens} ${palavra}: ${reais.format(subtotal / 100)}`);
 
- console.log(`Taxa: ${reais.format(TAXA_ENTREGA / 100)}`);
- console.log(`Total: ${reais.format(total / 100)}`);
+  let taxa = 0;
+  switch (bairro) {
+    case "Rio Vermelho":
+      taxa = 500;
+      break;
+    case "Barra":
+      taxa = 600;
+      break;
+    case "Pituba":
+      taxa = 700;
+      break;
+    case "Itapuã":
+      taxa = 900;
+      break;
+  }
 
- // Regras do pedido (Victória)
- const PEDIDO_MINIMO = 3000;
- const HORA_ABERTURA = 11;
- const HORA_FECHAMENTO = 22;
-
- const horaAtual = new Date().getHours();
-
- const pedidoMinimoAtingido = subtotal >= PEDIDO_MINIMO;
- const dentroDoHorario =
-   horaAtual >= HORA_ABERTURA && horaAtual < HORA_FECHAMENTO;
-
- const pedidoPodeSerFeito =
-   pedidoMinimoAtingido && dentroDoHorario;
-
- console.log(`Pedido mínimo atingido: ${pedidoMinimoAtingido}`);
- console.log(`Dentro do horário: ${dentroDoHorario}`);
- console.log(`Pedido pode ser feito: ${pedidoPodeSerFeito}`);
+  if (taxa === 0) {
+    console.log(`Recusado: não entregamos em ${bairro}.`);
+  } else if (hora < 11 || hora >= 22) {
+    console.log("Recusado: pedidos só das 11h às 22h.");
+  } else if (subtotal < PEDIDO_MINIMO) {
+    const falta = PEDIDO_MINIMO - subtotal;
+    console.log(`Recusado: faltam ${reais.format(falta / 100)} para o mínimo de ${reais.format(PEDIDO_MINIMO / 100)}.`);
+  } else {
+    const temDesconto = PRIMEIRA_COMPRA[c] && CUPONS[c] === "PRIMEIRA10";
+    const desconto = temDesconto ? Math.round((subtotal * 10) / 100) : 0;
+    const total = subtotal - desconto + taxa;
+    if (desconto > 0) {
+      console.log(`Desconto: ${reais.format(-desconto / 100)}`);
+    }
+    console.log(`Taxa:  ${reais.format(taxa / 100)}`);
+    console.log(`Total: ${reais.format(total / 100)}`);
+  }
+}
