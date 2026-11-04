@@ -1,7 +1,6 @@
-
  // src/calculo.js - o total de um pedido do delivery
  // Dinheiro sempre em centavos inteiros. R$ só na hora de mostrar.
-//(VICTORIA)
+
 const reais = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 const PRATOS = [
