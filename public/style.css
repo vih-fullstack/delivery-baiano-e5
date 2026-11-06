@@ -1,0 +1,349 @@
+
+/* ========================================
+   DELIVERY DONA JU - ESTILO GERAL
+======================================== */
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+header {
+    background-color: #e6002d;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 15px;
+}
+
+
+/* ========================================
+   MENU DE NAVEGAÇÃO
+======================================== */
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    margin-top: 22px;
+}
+
+nav a {
+    display: inline-block;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 9px 17px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    color: #e6002d;
+}
+
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+main {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 45px;
+}
+
+section h2 {
+    color: #222222;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+
+/* ========================================
+   CARDÁPIO
+======================================== */
+
+#cardapio ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    list-style: none;
+}
+
+#cardapio li {
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+#cardapio li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.10);
+}
+
+#cardapio h3 {
+    color: #222222;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+#cardapio li p {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 12px;
+}
+
+#cardapio li strong {
+    color: #168b3b;
+    font-size: 19px;
+}
+
+
+/* ========================================
+   SEÇÃO COMO PEDIR
+======================================== */
+
+#como-pedir {
+    background-color: #f3f3f3;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+#como-pedir h2 {
+    margin-bottom: 18px;
+}
+
+#como-pedir ol {
+    padding-left: 25px;
+}
+
+#como-pedir li {
+    margin-bottom: 10px;
+}
+
+#como-pedir p {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   FORMULÁRIO DE PEDIDOS
+======================================== */
+
+form {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+}
+
+fieldset {
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+legend {
+    color: #e6002d;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+form p {
+    margin-bottom: 18px;
+}
+
+form label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #333333;
+}
+
+
+/* CAMPOS DE PREENCHIMENTO */
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #e6002d;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(230, 0, 45, 0.15);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+
+/* QUANTIDADE DOS PRATOS */
+
+form input[type="number"] {
+    max-width: 120px;
+}
+
+
+/* ========================================
+   BOTÃO ENVIAR PEDIDO
+======================================== */
+
+form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #e6002d;
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #c90027;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    background-color: #f1f1f1;
+    color: #444444;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+footer a {
+    color: #e6002d;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE - CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    #cardapio ul {
+        grid-template-columns: 1fr;
+    }
+
+    #cardapio li {
+        padding: 18px;
+    }
+
+    form {
+        padding: 18px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    legend {
+        font-size: 16px;
+    }
+
+    form button {
+        font-size: 15px;
+    }
+}
