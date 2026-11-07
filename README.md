@@ -34,3 +34,15 @@ Scrum Master da Sprint 1: Victória Gabriela Nunes Dos Santos.
 - O cliente pode consultar o cardápio e acompanhar o status do pedido.
 - A taxa de entrega depende do bairro atendido.
 - A taxa de entrega e o valor total devem ser informados antes da confirmação do pedido.
+
+## Como contribuir
+
+1. Faça um fork ou clone do repositório.
+2. Atualize sua branch `main` com as alterações mais recentes.
+3. Crie uma branch para sua tarefa, seguindo o padrão `feat/nome-da-funcionalidade` ou `fix/nome-da-correcao`.
+4. Realize as alterações necessárias no código.
+5. Faça commits com mensagens claras e padronizadas.
+6. Envie sua branch para o GitHub com `git push`.
+7. Abra um Pull Request direcionado à branch `main`.
+8. Solicite a revisão de outro integrante da equipe.
+9. Após a aprovação, faça o merge do Pull Request.
