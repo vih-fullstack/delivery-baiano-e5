@@ -43,9 +43,19 @@ function dentroDoHorario(hora) {
     return hora >= 11 && hora < 22;
 }
 
+function calcularDesconto(subtotal, cupom, primeiraCompra) {
+    return 0;
+}
+
+function motivoDaRecusa(pedido) {
+    return "";
+}
+
 module.exports = {
     calcularSubtotal,
     calcularTotal,
     calcularTaxa,
-    dentroDoHorario
+    dentroDoHorario,
+    calcularDesconto,
+    motivoDaRecusa
 };
