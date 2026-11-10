@@ -21,7 +21,7 @@ Requer Node.js 26.
 
 ## Situação
 
-Sprint 1 em andamento. O projeto possui cardápio em HTML, formulário de pedido, validações nativas no formulário, atividade de depuração concluída e lógica inicial de cálculo em JavaScript.
+Sprint 1 concluída. Sprint 2 em andamento, com as regras de negócio implementadas em JavaScript e os testes automatizados passando.
 
 Scrum Master da Sprint 1: Victória Gabriela Nunes Dos Santos.
 
