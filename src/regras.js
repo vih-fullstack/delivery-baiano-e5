@@ -1,4 +1,3 @@
-
 const PRECOS = [1290, 3890, 2800, 2800, 2800, 3500];
 const PEDIDO_MINIMO = 3000;
 
@@ -44,11 +43,29 @@ function dentroDoHorario(hora) {
 }
 
 function calcularDesconto(subtotal, cupom, primeiraCompra) {
-    return 0;
+    const valeCupom = cupom === "PRIMEIRA10" && primeiraCompra;
+    return valeCupom ? Math.round((subtotal * 10) / 100) : 0;
 }
 
 function motivoDaRecusa(pedido) {
-    return "";
+
+  // 1. Verificar se o bairro é atendido
+  if (calcularTaxa(pedido.bairro) === 0) {
+    return `não entregamos em ${pedido.bairro}`;
+  }
+
+  // 2. Verificar o horário
+  if (!dentroDoHorario(pedido.hora)) {
+    return "pedidos só das 11h às 22h";
+  }
+
+  // 3. Verificar o pedido mínimo
+  if (calcularSubtotal(PRECOS, pedido.qtds) < PEDIDO_MINIMO) {
+    return "abaixo do mínimo de R$ 30,00 em itens";
+  }
+
+  // Nenhum motivo para recusar
+  return "";
 }
 
 module.exports = {
