@@ -1,3 +1,6 @@
+
+const { buscarProduto } = require("./dados/cardapio.js");
+
 const PRECOS = [1290, 3890, 2800, 2800, 2800, 3500];
 const PEDIDO_MINIMO = 3000;
 
@@ -11,8 +14,16 @@ function calcularSubtotal(precos, qtds) {
     return subtotal;
 }
 
+// Nova função: calcula o subtotal usando os IDs dos produtos
+function subtotalDosItens(itens) {
+    return itens.reduce(
+        (soma, item) => soma + buscarProduto(item.id).preco * item.qtd,
+        0
+    );
+}
+
 function calcularTotal(pedido) {
-    const subtotal = calcularSubtotal(PRECOS, pedido.qtds);
+    const subtotal = subtotalDosItens(pedido.itens);
     const desconto = calcularDesconto(
         subtotal,
         pedido.cupom,
@@ -48,29 +59,30 @@ function calcularDesconto(subtotal, cupom, primeiraCompra) {
 }
 
 function motivoDaRecusa(pedido) {
+    // 1. Verificar se o bairro é atendido
+    if (calcularTaxa(pedido.bairro) === 0) {
+        return `não entregamos em ${pedido.bairro}`;
+    }
 
-  // 1. Verificar se o bairro é atendido
-  if (calcularTaxa(pedido.bairro) === 0) {
-    return `não entregamos em ${pedido.bairro}`;
-  }
+    // 2. Verificar o horário
+    if (!dentroDoHorario(pedido.hora)) {
+        return "pedidos só das 11h às 22h";
+    }
 
-  // 2. Verificar o horário
-  if (!dentroDoHorario(pedido.hora)) {
-    return "pedidos só das 11h às 22h";
-  }
+    // 3. Verificar o pedido mínimo
+    if (subtotalDosItens(pedido.itens) < PEDIDO_MINIMO) {
+        return "abaixo do mínimo de R$ 30,00 em itens";
+    }
 
-  // 3. Verificar o pedido mínimo
-  if (calcularSubtotal(PRECOS, pedido.qtds) < PEDIDO_MINIMO) {
-    return "abaixo do mínimo de R$ 30,00 em itens";
-  }
-
-  // Nenhum motivo para recusar
-  return "";
+    // Nenhum motivo para recusar
+    return "";
 }
 
 module.exports = {
     calcularSubtotal,
+    subtotalDosItens,
     calcularTotal,
+    PEDIDO_MINIMO,
     calcularTaxa,
     dentroDoHorario,
     calcularDesconto,
