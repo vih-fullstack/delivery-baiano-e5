@@ -82,6 +82,7 @@ module.exports = {
     calcularSubtotal,
     subtotalDosItens,
     calcularTotal,
+    PEDIDO_MINIMO,
     calcularTaxa,
     dentroDoHorario,
     calcularDesconto,
