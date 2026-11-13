@@ -24,6 +24,7 @@ Requer Node.js 26.
 Sprint 1 concluída. Sprint 2 em andamento, com as regras de negócio implementadas em JavaScript e os testes automatizados passando.
 
 Scrum Master da Sprint 1: Victória Gabriela Nunes Dos Santos.
+
 Scrum Master da Sprint 2: Andressa Santos Nascimento.
 
 ## Regras da Dona Ju
