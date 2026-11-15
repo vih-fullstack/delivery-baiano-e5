@@ -1,7 +1,6 @@
 
 const { buscarProduto } = require("./dados/cardapio.js");
 
-const PRECOS = [1290, 3890, 2800, 2800, 2800, 3500];
 const PEDIDO_MINIMO = 3000;
 
 function calcularSubtotal(precos, qtds) {
