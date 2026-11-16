@@ -3,7 +3,7 @@
   "name": "delivery-baiano-e5",
   "version": "1.0.0",
   "description": "Projeto de desenvolvimento de uma plataforma de pedidos e entregas online. O objetivo é simular o ecossistema completo de um app de delivery, integrando catálogo de produtos, carrinho de compras, acompanhamento de pedidos em tempo real e painel administrativo.",
-  "main": "index.js",
+  "main": "src/demo-pedido.js",
   "scripts": {
     "start": "node src/demo-pedido.js",
     "dev": "node --watch src/demo-pedido.js",
