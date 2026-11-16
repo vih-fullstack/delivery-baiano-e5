@@ -1,5 +1,5 @@
 
-const regras = require("./regras.js");
+import * as regras from "./regras.js";
 
 console.log("Testando as regras...");
 

@@ -1,5 +1,5 @@
 
-const { buscarProduto } = require("./dados/cardapio.js");
+import { buscarProduto } from "./dados/cardapio.js";
 
 const PEDIDO_MINIMO = 3000;
 
@@ -77,7 +77,7 @@ function motivoDaRecusa(pedido) {
     return "";
 }
 
-module.exports = {
+export {
     calcularSubtotal,
     subtotalDosItens,
     calcularTotal,

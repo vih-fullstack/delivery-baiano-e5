@@ -1,6 +1,6 @@
 
-const Produto = require("./models/Produto.js");
-const Pedido = require("./models/Pedido.js");
+import Produto from "./models/Produto.js";
+import Pedido from "./models/Pedido.js";
 
 const reais = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -28,7 +28,7 @@ pedido2.adicionarItem(vatapa, 2);
 console.log(`Pedido 2: ${reais.format(pedido2.total() / 100)}`);
 
 console.assert(pedido1.total() === 4600, "pedido 1: R$ 46,00");
-console.assert(pedido2.total() === 3200, "pedido 2: R$ 32,00 com o cupom");
+console.assert(pedido2.total() === 3200, "pedido 2: R$ 32,00 como cupom");
 
 // Tire o comentário de uma linha por vez para testar os erros:
 // pedido1.adicionarItem(bobo, 1);

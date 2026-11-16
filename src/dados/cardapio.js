@@ -1,3 +1,4 @@
+
 // Cardápio da Delivery dona Ju
 // Preços em centavos.
 
@@ -20,7 +21,7 @@ function listarAtivos() {
     return CARDAPIO.filter((produto) => produto.ativo);
 }
 
-module.exports = {
+export {
     CARDAPIO,
     buscarProduto,
     listarAtivos

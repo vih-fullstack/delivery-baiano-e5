@@ -1,4 +1,6 @@
+
 // src/models/Produto.js - um prato do cardápio da Dona Ju
+
 class Produto {
     constructor(id, nome, preco, estoque, ativo = true) {
         if (!Number.isInteger(preco) || preco <= 0) {
@@ -17,4 +19,4 @@ class Produto {
     }
 }
 
-module.exports = Produto;
+export default Produto;
