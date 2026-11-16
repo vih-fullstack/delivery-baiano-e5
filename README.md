@@ -25,6 +25,8 @@ Sprint 1 concluída. Sprint 2 em andamento, com as regras de negócio implementa
 
 Scrum Master da Sprint 1: Victória Gabriela Nunes Dos Santos.
 
+Scrum Master da Sprint 2: Andressa Santos Nascimento.
+
 ## Regras da Dona Ju
 
 - O delivery recebe pedidos das 11h às 22h.
