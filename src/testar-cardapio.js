@@ -1,4 +1,5 @@
-const { CARDAPIO, buscarProduto, listarAtivos } = require("./dados/cardapio.js");
+
+import { CARDAPIO, buscarProduto, listarAtivos } from "./dados/cardapio.js";
 
 console.log("Testando o cardápio...");
 
