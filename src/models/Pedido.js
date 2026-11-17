@@ -1,5 +1,5 @@
 
- // src/models/Pedido.js - o pedido da Dona Ju como classe
+// src/models/Pedido.js - o pedido da Dona Ju como classe
 
 import * as regras from "../regras.js";
 import ItemPedido from "./ItemPedido.js";
@@ -12,6 +12,7 @@ class Pedido {
         this.hora = hora;
         this.cupom = cupom;
         this.primeiraCompra = primeiraCompra;
+        this.criadoEm = new Date();
     }
 
     adicionarItem(produto, qtd) {
