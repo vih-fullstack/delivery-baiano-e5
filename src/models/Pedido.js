@@ -50,6 +50,22 @@ class Pedido {
         }
     }
 
+
+    // Transforma o pedido em um objeto que pode ser gravado em JSON
+    paraObjeto() {
+        return {
+            bairro: this.bairro,
+            hora: this.hora,
+            itens: this.#itens.map((item) => ({
+                id: item.produto.id,
+                nome: item.produto.nome,
+                qtd: item.qtd,
+                precoUnitario: item.precoUnitario,
+            })),
+            total: this.total(),
+        };
+    }
+    
     // Calcula o total do pedido
     total() {
         this.validar();
