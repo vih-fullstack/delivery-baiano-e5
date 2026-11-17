@@ -1,4 +1,3 @@
-
 {
   "name": "delivery-baiano-e5",
   "version": "1.0.0",
@@ -20,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/vih-fullstack/delivery-baiano-e5/issues"
   },
-  "homepage": "https://github.com/vih-fullstack/delivery-baiano-e5#readme"
+  "homepage": "https://github.com/vih-fullstack/delivery-baiano-e5#readme",
+  "dependencies": {
+    "dayjs": "^1.11.23"
+  }
 }
