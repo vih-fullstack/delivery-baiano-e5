@@ -48,3 +48,23 @@ Scrum Master da Sprint 2: Andressa Santos Nascimento.
 7. Abra um Pull Request direcionado à branch `main`.
 8. Solicite a revisão de outro integrante da equipe.
 9. Após a aprovação, faça o merge do Pull Request.
+
+## Como rodar
+
+Na pasta do repositório:
+
+    npm install
+    npm start
+    npm run dev
+    npm test
+    node src/pedido-agora.js
+
+## Bibliotecas
+
+| Biblioteca | Versão | Para quê | Licença |
+|---|---|---|---|
+| dayjs | ^1.11.23 | data e hora do pedido em português | MIT |
+
+## npm audit
+
+Rodado em 17/11/2026: `found 0 vulnerabilities`.
