@@ -68,3 +68,24 @@ Na pasta do repositório:
 ## npm audit
 
 Rodado em 17/11/2026: `found 0 vulnerabilities`.
+
+## Pedidos em arquivo
+
+Os pedidos ficam em `data/pedidos.json` (fora do Git: cada máquina tem os seus).
+
+Para salvar e listar os pedidos:
+
+```bash
+node src/salvar-pedido.js
+node src/listar-pedidos.js
+```
+
+## Testes manuais (Aula 14)
+
+| # | O que fiz | Esperado | Deu certo? |
+|---|---|---|---|
+| 1 | Apaguei a pasta data e rodei node src/listar-pedidos.js | 0 pedido(s) no arquivo | Sim |
+| 2 | Rodei node src/salvar-pedido.js | Pedido 1 gravado: 3 pratos, R$ 46,00 | Sim |
+| 3 | Rodei node src/salvar-pedido.js novamente | Pedido 2 gravado: 3 pratos, R$ 46,00 | Sim |
+| 4 | Fechei o terminal, abri outro e rodei node src/listar-pedidos.js | 2 pedido(s) no arquivo, #1 e #2 | Sim |
+| 5 | Busquei o pedido 99 | O pedido 99 não existe | Sim |
