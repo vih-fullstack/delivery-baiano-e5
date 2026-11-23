@@ -3,6 +3,7 @@
 
 import * as regras from "../regras.js";
 import ItemPedido from "./ItemPedido.js";
+import { ErroValidacao } from "../erros.js";
 
 class Pedido {
     #itens = [];
@@ -46,7 +47,7 @@ class Pedido {
         }
 
         if (this.subtotal() < regras.PEDIDO_MINIMO) {
-            throw new Error("abaixo do mínimo de R$ 30,00 em itens");
+            throw new ErroValidacao("abaixo do mínimo de R$ 30,00 em itens");
         }
     }
 
