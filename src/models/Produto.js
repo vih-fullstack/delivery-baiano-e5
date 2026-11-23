@@ -1,10 +1,12 @@
 
 // src/models/Produto.js - um prato do cardápio da Dona Ju
 
+import { ErroValidacao } from "../erros.js";
+
 class Produto {
     constructor(id, nome, preco, estoque, ativo = true) {
         if (!Number.isInteger(preco) || preco <= 0) {
-            throw new Error(`preço inválido para ${nome}: ${preco}`);
+            throw new ErroValidacao(`preço inválido para ${nome}: ${preco}`);
         }
         this.id = id;
         this.nome = nome;

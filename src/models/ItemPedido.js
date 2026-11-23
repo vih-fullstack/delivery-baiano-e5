@@ -1,8 +1,9 @@
+import { ErroValidacao } from "../erros.js";
 
 class ItemPedido {
   constructor(produto, qtd) {
     if (!Number.isInteger(qtd) || qtd < 1) {
-      throw new Error(`quantidade inválida: ${qtd}`);
+      throw new ErroValidacao(`quantidade inválida: ${qtd}`);
     }
 
     this.produto = produto;
