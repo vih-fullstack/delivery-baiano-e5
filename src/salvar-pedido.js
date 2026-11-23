@@ -19,7 +19,7 @@
  pedido.adicionarItem(abara, 1);
  pedido.adicionarItem(cocada, 1);
 
- const gravado = await salvar(pedido.paraObjeto());
+const gravado = await salvar({ cliente: "Joana Santos", ...pedido.paraObjeto() });
 
  console.log(
      `Pedido ${gravado.id} gravado: ${gravado.itens.length} pratos, ${reais.format(gravado.total / 100)}`
