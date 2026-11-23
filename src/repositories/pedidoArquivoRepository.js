@@ -28,7 +28,12 @@ export async function buscarPorId(id) {
 export async function salvar(dados) {
     const pedidos = await listar();
     const maiorId = pedidos.reduce((maior, pedido) => Math.max(maior, pedido.id), 0);
-    const novo = { id: maiorId + 1, ...dados };
+    const novo = {
+    id: maiorId + 1,
+    criadoEm: new Date().toISOString(),
+    status: "recebido",
+    ...dados,
+};
     pedidos.push(novo);
     await mkdir(PASTA, { recursive: true });
     await writeFile(ARQUIVO, JSON.stringify(pedidos, null, 2), "utf-8");
