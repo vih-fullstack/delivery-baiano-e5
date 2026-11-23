@@ -1,0 +1,7 @@
+id;nome;preco;estoque;ativo
+1;Acarajé;12,90;30;sim
+2;Bobó de camarão;38,90;20;sim
+3;Moqueca de banana;28,00;15;sim
+4;Caruru Baiano;28,00;10;sim
+5;Moqueca Baiana de Peixe;28,00;0;não
+6;Xinxim de Galinha;35,00;12;sim
