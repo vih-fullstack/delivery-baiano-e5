@@ -43,4 +43,20 @@ rotas.get("/pedidos/:id", async (req, res) => {
     res.json(pedido);
 });
 
+// Os status que um pedido pode ter, na ordem
+const STATUS = ["recebido", "em preparo", "saiu para a entrega", "entregue", "cancelado"];
+
+// PATCH /pedidos/7/status: a cozinha muda só o status
+rotas.patch("/pedidos/:id/status", async (req, res) => {
+  const { status } = req.body ?? {};
+  if (!STATUS.includes(status)) {
+    throw new ErroValidacao(`status inválido. Use um destes: ${STATUS.join(", ")}`);
+  }
+  const pedido = await repositorio.atualizarStatus(Number(req.params.id), status);
+  if (!pedido) {
+    throw new ErroNaoEncontrado(`pedido ${req.params.id} não existe`);
+  }
+  res.json(pedido);
+});
+
 export default rotas;
