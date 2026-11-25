@@ -1,6 +1,7 @@
 import express from "express";
 import path from "node:path";
 import rotasProdutos from "./rotas/produtos.js";
+import rotasPedidos from "./rotas/pedidos.js";
 import { ErroValidacao, ErroNaoEncontrado } from "./erros.js";
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.static(path.join(import.meta.dirname, "..", "public")));
 
 // Rotas de produtos
 app.use(rotasProdutos);
+app.use(rotasPedidos);
 
 // Rota não encontrada
 app.use((req, res, next) => {
