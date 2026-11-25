@@ -39,3 +39,15 @@ export async function salvar(dados) {
     await writeFile(ARQUIVO, JSON.stringify(pedidos, null, 2), "utf-8");
     return novo;
 }
+
+// Troca só o status do pedido e grava; devolve o pedido, ou undefined se não existe
+export async function atualizarStatus(id, status) {
+  const pedidos = await listar();
+  const pedido = pedidos.find((p) => p.id === id);
+  if (!pedido) {
+    return undefined;
+  }
+  pedido.status = status;
+  await writeFile(ARQUIVO, JSON.stringify(pedidos, null, 2), "utf-8");
+  return pedido;
+}
