@@ -89,3 +89,18 @@ node src/listar-pedidos.js
 | 3 | Rodei node src/salvar-pedido.js novamente | Pedido 2 gravado: 3 pratos, R$ 46,00 | Sim |
 | 4 | Fechei o terminal, abri outro e rodei node src/listar-pedidos.js | 2 pedido(s) no arquivo, #1 e #2 | Sim |
 | 5 | Busquei o pedido 99 | O pedido 99 não existe | Sim |
+
+## Banco de dados - PostgreSQL (Aula 17)
+Para testar sem instalar nada: db-fiddle.com, Database PostgreSQL 17.
+Cole o `db/schema.sql` e, embaixo, o `db/seed.sql` no painel Schema SQL,
+as consultas do `db/consultas.sql` no Query SQL, e clique em Run.
+Na máquina, precisa do PostgreSQL 16 ou mais novo e do pgAdmin 4.
+1. No pgAdmin: Databases > Create > Database, nome `delivery`.
+2. Botão direito no `delivery` > Query Tool > Open File > `db/schema.sql` > F5.
+3. Open File > `db/seed.sql` > F5.
+4. Para conferir: `db/consultas.sql`, uma consulta por vez.
+Para recomeçar do zero, rode o `schema.sql` e o `seed.sql` de novo.
+Pelo psql (SQL Shell, no Windows), as barras do caminho são `/`:
+\c delivery
+\i 'D:/projetos/delivery-baiano-eN/db/schema.sql'
+\i 'D:/projetos/delivery-baiano-eN/db/seed.sql'
